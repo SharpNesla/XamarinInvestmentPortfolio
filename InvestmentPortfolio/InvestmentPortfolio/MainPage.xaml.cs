@@ -20,10 +20,17 @@ namespace InvestmentPortfolio
     [AddINotifyPropertyChangedInterface]
     class MainPageViewModel
     {
-        public List<Portfolio> Portfolios { get; }
+        public List<Portfolio> Portfolios { get; private set; }
+        private PortfolioService _porfolioService;
         public MainPageViewModel(PortfolioService portfolioService)
         {
-            //this.Portfolios = portfolioService.Get().Result;
+            this._porfolioService = portfolioService;
+            Init();
+        }
+        public async void Init()
+        {
+            var portfolios = await this._porfolioService.Get();
+            this.Portfolios = portfolios;
         }
     }
 }

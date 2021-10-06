@@ -20,7 +20,7 @@ namespace InvestmentPortfolio
         {
             if (NavigationPage != null)
             {
-                await Shell.Current.Navigation.PushAsync(NavigationPage);
+                await Application.Current.MainPage.Navigation.PushAsync(NavigationPage);
             }
         }
     }

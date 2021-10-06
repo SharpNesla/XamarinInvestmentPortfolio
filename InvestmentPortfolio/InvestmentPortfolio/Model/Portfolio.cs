@@ -13,6 +13,7 @@ namespace InvestmentPortfolio.Model
         public uint PortfolioID { get; set; }
         public string Name { get; set; }
         public string Currency { get; set; }
+        public decimal Cost { get; set; }
         public string Comment { get; set; }
     }
 }

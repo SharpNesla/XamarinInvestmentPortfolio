@@ -40,7 +40,13 @@ namespace InvestmentPortfolio.Model
         
         public async Task<List<Portfolio>> Get()
         {
-            return await Database.Table<Portfolio>().ToListAsync();
+            var task = Database.Table<Portfolio>().ToListAsync();
+            return await task;
+        }
+
+        public async Task<int> Add(Portfolio portfolio)
+        {
+           return await Database.InsertAsync(portfolio, typeof(Portfolio));
         }
     }
 }
