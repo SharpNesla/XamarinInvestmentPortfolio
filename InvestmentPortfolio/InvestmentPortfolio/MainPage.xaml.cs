@@ -5,6 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using PropertyChanged;
+using InvestmentPortfolio.Model;
 
 namespace InvestmentPortfolio
 {
@@ -13,6 +15,15 @@ namespace InvestmentPortfolio
         public MainPage()
         {
             InitializeComponent();
+        }
+    }
+    [AddINotifyPropertyChangedInterface]
+    class MainPageViewModel
+    {
+        public List<Portfolio> Portfolios { get; }
+        public MainPageViewModel(PortfolioService portfolioService)
+        {
+            //this.Portfolios = portfolioService.Get().Result;
         }
     }
 }

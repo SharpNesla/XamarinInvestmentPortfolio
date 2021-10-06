@@ -9,8 +9,8 @@ namespace InvestmentPortfolio
         public App()
         {
             InitializeComponent();
-
-            MainPage = new MainPage();
+            var navigationPage = new NavigationPage(new MainPage());
+            MainPage = navigationPage;
         }
 
         protected override void OnStart()
