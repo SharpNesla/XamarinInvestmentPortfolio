@@ -6,7 +6,7 @@
              xmlns:views="clr-namespace:InvestmentPortfolio.Views"
              x:Name="Test"
        FlyoutBehavior="Disabled">
-    <ShellContent ContentTemplate="{DataTemplate views:Main}"/>
+    <ShellContent Route="main" ContentTemplate="{DataTemplate views:Main}"/>
     <ShellContent Route="portfolio-add" ContentTemplate="{DataTemplate views:PortfolioAdd}"/>
     <ShellContent Route="portfolio-info" ContentTemplate="{DataTemplate views:PortfolioInfo}"/>
     <ShellContent Route="position-add"></ShellContent>
