@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Text;
 using System.Windows.Input;
 using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
 
 namespace InvestmentPortfolio
 {
-    class NavigationCommand : BindableObject, ICommand
+    class NavigationCommand : BindableObject, ICommand, IMarkupExtension
     {
-        public Page NavigationPage { get; set; }
         public event EventHandler CanExecuteChanged;
 
         public bool CanExecute(object parameter)
@@ -18,10 +18,12 @@ namespace InvestmentPortfolio
 
         async public void Execute(object parameter)
         {
-            if (NavigationPage != null)
-            {
-                await Application.Current.MainPage.Navigation.PushAsync(NavigationPage);
-            }
+            await Shell.Current.GoToAsync(parameter as string);
+        }
+
+        public object ProvideValue(IServiceProvider serviceProvider)
+        {
+            return new NavigationCommand();
         }
     }
 }

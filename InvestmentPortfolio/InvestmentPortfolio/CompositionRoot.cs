@@ -11,7 +11,6 @@ namespace InvestmentPortfolio
         #region ViewModels
 
         public MainPageViewModel MainPageViewModel => new MainPageViewModel(Portfolio);
-        public PortfolioEditorViewModel PortfolioEditorViewModel => new PortfolioEditorViewModel(Portfolio);
 
         #endregion
 

@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="InvestmentPortfolio.Views.Main"
+             Shell.NavBarIsVisible="False"
+             BindingContext="{Binding MainPageViewModel,Source={StaticResource CompositionRoot}}"
+             xmlns:local="clr-namespace:InvestmentPortfolio"
+             xmlns:views="clr-namespace:InvestmentPortfolio.Views">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout>
+                <Button Text="Searh"></Button>
+                <Entry></Entry>
+                <Button Text="Settings"></Button>
+            </StackLayout>
+            <Button Text="+" CommandParameter="///portfolio-add" Command="{local:NavigationCommand}"/>
+            <ScrollView>
+                <StackLayout>
+                    <ListView ItemsSource="{Binding Portfolios}">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <StackLayout>
+                                        <Label Text="{Binding Name}"/>
+                                        <Label Text="{Binding Cost}"/>
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

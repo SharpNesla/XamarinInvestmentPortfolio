@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace InvestmentPortfolio.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class PortfolioList : ContentPage
+    public partial class PositionAdd : ContentPage
     {
-        public PortfolioList()
+        public PositionAdd()
         {
             InitializeComponent();
         }

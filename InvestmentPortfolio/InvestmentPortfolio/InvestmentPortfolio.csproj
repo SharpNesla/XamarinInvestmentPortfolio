@@ -18,19 +18,16 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Views\PortfolioInfo.xaml.cs">
-      <DependentUpon>PortfolioInfo.xaml</DependentUpon>
-    </Compile>
-  </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Update="Views\PortfolioEditor.xaml">
+    <EmbeddedResource Update="Views\Main.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\PortfolioList.xaml">
+    <EmbeddedResource Update="Views\PortfolioAdd.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\PortfolioInfo.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\PositionAdd.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

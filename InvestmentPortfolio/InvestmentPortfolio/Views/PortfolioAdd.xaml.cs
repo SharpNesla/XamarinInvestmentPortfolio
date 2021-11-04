@@ -1,18 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Xamarin.Forms;
-using PropertyChanged;
-using InvestmentPortfolio.Model;
 
-namespace InvestmentPortfolio
+using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
+
+namespace InvestmentPortfolio.Views
 {
-    public partial class ShellPage : Shell
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class PortfolioAdd : ContentPage
     {
-        public ShellPage()
+        public PortfolioAdd()
         {
             InitializeComponent();
         }

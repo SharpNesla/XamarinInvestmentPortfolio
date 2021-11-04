@@ -1,41 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+<Shell xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="InvestmentPortfolio.MainPage"
+             x:Class="InvestmentPortfolio.ShellPage"
              xmlns:local="clr-namespace:InvestmentPortfolio"
              xmlns:views="clr-namespace:InvestmentPortfolio.Views"
              x:Name="Test"
-             BindingContext="{Binding MainPageViewModel, Source={StaticResource CompositionRoot}}">
-    <StackLayout>
-        <StackLayout>
-            <Button Text="Searh"></Button>
-            <Entry></Entry>
-            <Button Text="Settings"></Button>
-        </StackLayout>
-        <Button Text="+">
-            <Button.Command>
-                <local:NavigationCommand>
-                    <local:NavigationCommand.NavigationPage>
-                        <views:PortfolioEditor/>
-                    </local:NavigationCommand.NavigationPage>
-                </local:NavigationCommand>
-            </Button.Command>
-        </Button>
-        <ScrollView>
-            <StackLayout>
-                <ListView ItemsSource="{Binding Portfolios}">
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <ViewCell>
-                                <StackLayout>
-                                    <Label Text="{Binding Name}"/>
-                                    <Label Text="{Binding Cost}"/>
-                                </StackLayout>
-                            </ViewCell>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
-            </StackLayout>
-        </ScrollView>
-    </StackLayout>
-</ContentPage>
+       FlyoutBehavior="Disabled">
+    <ShellContent ContentTemplate="{DataTemplate views:Main}"/>
+    <ShellContent Route="portfolio-add" ContentTemplate="{DataTemplate views:PortfolioAdd}"/>
+    <ShellContent Route="portfolio-info" ContentTemplate="{DataTemplate views:PortfolioInfo}"/>
+    <ShellContent Route="position-add"></ShellContent>
+</Shell>
