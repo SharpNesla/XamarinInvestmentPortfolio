@@ -1,13 +1,110 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="InvestmentPortfolio.Views.PortfolioInfo"
->
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage.Content>
-</ContentPage>
+            x:Name="PortfolioInfoView"
+             Title="{Binding Portfolio.Name}"
+             
+             xmlns:local="clr-namespace:InvestmentPortfolio"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             xmlns:views="clr-namespace:InvestmentPortfolio.Views"
+            BarTextColor="{StaticResource Foreground}"
+            SelectedTabColor="{StaticResource Foreground}"
+            UnselectedTabColor="Gray"
+            BarBackgroundColor="{StaticResource Background}"
+            BindingContext="{Binding PortfolioInfoViewModel,Source={StaticResource CompositionRoot}}">
+    <TabbedPage.Resources>
+        <views:OptimizeByConverter x:Key="Conv"/>
+        <x:String x:Key="examplePerc">11</x:String>
+    </TabbedPage.Resources>
+    <TabbedPage.Children>
+        <ContentPage Title="Активы">
+            <RelativeLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <StackLayout>
+                    <Grid Margin="16" ColumnDefinitions="*, auto">
+                        <Picker Title="Оптимизировать по" SelectedItem="{Binding OptimizeBy}"
+                                ItemsSource="{Binding OptimizeItems}"
+                                ItemDisplayBinding="{Binding ., Converter={StaticResource Conv}}"/>
+
+                        <Button Style="{StaticResource FlatIconButton}"
+                            HorizontalOptions="Start"
+                            VerticalOptions="Center"
+                            Margin="16,0,0,0"
+                            Text="?"
+                            Grid.Column="1"/>
+                    </Grid>
+                    <ListView ItemsSource="{Binding Positions}"
+                              SelectionMode="None">
+                        <ListView.Behaviors>
+                            <xct:EventToCommandBehavior EventName="ItemTapped" Command="{Binding EditCommand}"                                                            />
+                        </ListView.Behaviors>
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <Grid ColumnDefinitions="Auto, *,Auto, Auto,Auto, Auto, Auto"
+                                          RowDefinitions="*,*"
+                                          Margin="16,0,16,0">
+
+                                        <Label Text="APL" Grid.RowSpan="2" VerticalOptions="Center"/>
+                                        
+                                        <Label Text="13 000" VerticalOptions="Center" Grid.Column="2"/>
+                                        <Label Text="RUB"
+                                               VerticalOptions="Center" HorizontalOptions="End" Grid.Column="3"/>
+
+                                        <Label Text="{Binding .,Source='10', StringFormat='{} шт'}" VerticalOptions="Center"
+                                               Grid.Column="2"
+                                               Grid.Row="1"/>
+                                        <Label Text="{Binding .,Source='10',StringFormat='{} %'}" VerticalOptions="Center"
+                                               Grid.Column="3"
+                                               Grid.Row="1"/>
+                                        
+                                        <Label Text="➜" VerticalOptions="Center" Grid.Column="4" Grid.RowSpan="2" Margin="4,0,4,0"/>
+
+                                        <Label Text="13 000" VerticalOptions="Center" Grid.Column="5"/>
+                                        <Label Text="RUB"
+                                               VerticalOptions="Center" HorizontalOptions="End" Grid.Column="6"/>
+
+                                        <Label Text="{Binding .,Source={StaticResource examplePerc}, StringFormat='{} шт'}" VerticalOptions="Center"
+                                               Grid.Column="5"
+                                               Grid.Row="1"/>
+                                        <Label Text="{Binding .,Source={StaticResource examplePerc},StringFormat='{} %'}" VerticalOptions="Center"
+                                               Grid.Column="6"
+                                               Grid.Row="1"/>
+
+                                    </Grid>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+                <Button Style="{StaticResource AccentFloatingButton}"
+                 RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent,
+        Property=Width, Factor=1, Constant=-90}"
+                 RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,
+        Property=Height, Factor=1, Constant=-90}"
+                Text="+" Command="{local:NavigationCommand {x:Type views:PositionAdd}}"
+                        FontSize="24"/>
+            </RelativeLayout>
+        </ContentPage>
+        <ContentPage Title="Сводка">
+            <StackLayout Style="{StaticResource BasicContainer}">
+                <Label Text="Распределение активов" Style="{StaticResource Title}"/>
+                <StackLayout Orientation="Horizontal">
+                    <Switch VerticalOptions="Center"/>
+                    <Label VerticalOptions="Center" Text="Оптимально"></Label>
+                </StackLayout>
+
+                <Label Text="Распределение" Style="{StaticResource Title}"/>
+            </StackLayout>
+        </ContentPage>
+        <ContentPage Title="Настройки">
+            <StackLayout Style="{StaticResource BasicContainer}">
+                <Label Text="Информация о портфеле" Style="{StaticResource Title}"/>
+                <Label Text="{Binding Portfolio.Name, StringFormat='Название: {0}'}"/>
+                <Label Text="{Binding Portfolio.Currency, StringFormat='Валюта: {0}'}"/>
+                <Label Text="Комментарий:"/>
+                <Label Text="{Binding Portfolio.Comment}"/>
+            </StackLayout>
+        </ContentPage>
+    </TabbedPage.Children>
+</TabbedPage>

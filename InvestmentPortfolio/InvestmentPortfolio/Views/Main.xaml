@@ -3,33 +3,55 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="InvestmentPortfolio.Views.Main"
              Shell.NavBarIsVisible="False"
-             BindingContext="{Binding MainPageViewModel,Source={StaticResource CompositionRoot}}"
+             
+             NavigationPage.HasNavigationBar="False"
+             
              xmlns:local="clr-namespace:InvestmentPortfolio"
-             xmlns:views="clr-namespace:InvestmentPortfolio.Views">
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             xmlns:views="clr-namespace:InvestmentPortfolio.Views"
+             
+             BindingContext="{Binding MainPageViewModel,Source={StaticResource CompositionRoot}}">
     <ContentPage.Content>
-        <StackLayout>
+        <RelativeLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
             <StackLayout>
-                <Button Text="Searh"></Button>
-                <Entry></Entry>
-                <Button Text="Settings"></Button>
+                <Grid Margin="16" ColumnDefinitions="*, auto">
+                    <Entry Placeholder="Поиск портфеля"
+                           Grid.ColumnSpan="2"/>
+                    <Button Style="{StaticResource FlatIconButton}"
+                            HorizontalOptions="Start"
+                            VerticalOptions="Center"
+                            Margin="0,0,8,0"
+                            Text="?"
+                            Grid.Column="1"/>
+                </Grid>
+                <ListView ItemsSource="{Binding Portfolios}"
+                              SelectionMode="None">
+                    <ListView.Behaviors>
+                        <xct:EventToCommandBehavior EventName="ItemTapped" Command="{Binding EditCommand}"                                                            />
+                    </ListView.Behaviors>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid ColumnDefinitions="Auto, *, Auto, Auto" Margin="16,0,16,0">
+
+                                    <Label Text="{Binding Name}" VerticalOptions="Center"/>
+                                    <Label Text="{Binding Cost}" VerticalOptions="Center" Grid.Column="2"/>
+                                    <Label Text="{Binding Currency}"
+                                               VerticalOptions="Center" HorizontalOptions="End" Grid.Column="3"/>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
             </StackLayout>
-            <Button Text="+" CommandParameter="///portfolio-add" Command="{local:NavigationCommand}"/>
-            <ScrollView>
-                <StackLayout>
-                    <ListView ItemsSource="{Binding Portfolios}">
-                        <ListView.ItemTemplate>
-                            <DataTemplate>
-                                <ViewCell>
-                                    <StackLayout>
-                                        <Label Text="{Binding Name}"/>
-                                        <Label Text="{Binding Cost}"/>
-                                    </StackLayout>
-                                </ViewCell>
-                            </DataTemplate>
-                        </ListView.ItemTemplate>
-                    </ListView>
-                </StackLayout>
-            </ScrollView>
-        </StackLayout>
+            
+            <Button Style="{StaticResource AccentFloatingButton}"
+                 RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent,
+        Property=Width, Factor=1, Constant=-90}"
+                 RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,
+        Property=Height, Factor=1, Constant=-90}"
+                    FontSize="24"
+                Text="+" Command="{local:NavigationCommand {x:Type views:PortfolioAdd}}"/>
+        </RelativeLayout>
     </ContentPage.Content>
 </ContentPage>

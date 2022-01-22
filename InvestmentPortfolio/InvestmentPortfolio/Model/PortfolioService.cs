@@ -27,7 +27,6 @@ namespace InvestmentPortfolio.Model
             }
         }
     }
-
     public class PortfolioService
     {
         SQLiteAsyncConnection Database;

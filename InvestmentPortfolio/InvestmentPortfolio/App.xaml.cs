@@ -1,4 +1,5 @@
-﻿using System;
+﻿using InvestmentPortfolio.Views;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -9,7 +10,8 @@ namespace InvestmentPortfolio
         public App()
         {
             InitializeComponent();
-            App.Current.MainPage = new ShellPage();
+            App.Current.MainPage = new MainPage();
+            App.Current.MainPage.Navigation.PushAsync(new Main());
         }
 
         protected override void OnStart()

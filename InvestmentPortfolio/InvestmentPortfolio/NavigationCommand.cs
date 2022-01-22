@@ -7,8 +7,15 @@ using Xamarin.Forms.Xaml;
 
 namespace InvestmentPortfolio
 {
-    class NavigationCommand : BindableObject, ICommand, IMarkupExtension
+    interface IOnNavigate<TParam>
     {
+        void OnNavigate(TParam param);
+    }
+    [ContentProperty(nameof(PageType))]
+    class NavigationCommand : ICommand, IMarkupExtension
+    {
+        public Type PageType { get; set; }
+
         public event EventHandler CanExecuteChanged;
 
         public bool CanExecute(object parameter)
@@ -18,12 +25,22 @@ namespace InvestmentPortfolio
 
         async public void Execute(object parameter)
         {
-            await Shell.Current.GoToAsync(parameter as string);
+            //TODO Handle incorrect page type
+            var page = Activator.CreateInstance(PageType) as Page;
+            if (parameter != null)
+            {
+                if (page.BindingContext is IOnNavigate<object>)
+                {
+                    var handler = page.BindingContext as IOnNavigate<object>;
+                    handler.OnNavigate(parameter);
+                }
+            }
+            await App.Current.MainPage.Navigation.PushAsync(page);
         }
 
         public object ProvideValue(IServiceProvider serviceProvider)
         {
-            return new NavigationCommand();
+            return this;
         }
     }
 }

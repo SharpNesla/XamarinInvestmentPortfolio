@@ -1,5 +1,4 @@
-﻿using PropertyChanged;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,20 +7,14 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace InvestmentPortfolio.Views
+namespace InvestmentPortfolio
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class PositionAdd : ContentPage
+    public partial class Styles : ResourceDictionary
     {
-        public PositionAdd()
+        public Styles()
         {
             InitializeComponent();
         }
-    }
-
-    [AddINotifyPropertyChangedInterface]
-    class PositionAddViewModel
-    {
-        
     }
 }

@@ -1,13 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<Shell xmlns="http://xamarin.com/schemas/2014/forms"
+<NavigationPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="InvestmentPortfolio.ShellPage"
-             xmlns:local="clr-namespace:InvestmentPortfolio"
-             xmlns:views="clr-namespace:InvestmentPortfolio.Views"
-             x:Name="Test"
-       FlyoutBehavior="Disabled">
-    <ShellContent Route="main" ContentTemplate="{DataTemplate views:Main}"/>
-    <ShellContent Route="portfolio-add" ContentTemplate="{DataTemplate views:PortfolioAdd}"/>
-    <ShellContent Route="portfolio-info" ContentTemplate="{DataTemplate views:PortfolioInfo}"/>
-    <ShellContent Route="position-add"></ShellContent>
-</Shell>
+             x:Class="InvestmentPortfolio.MainPage"
+             Visual="Material"
+             BackgroundColor="{StaticResource Background}"
+             BarBackgroundColor="{StaticResource Background}"
+             BarTextColor="{StaticResource Foreground}">
+</NavigationPage>

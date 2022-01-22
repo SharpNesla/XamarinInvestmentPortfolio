@@ -1,19 +1,29 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:root="clr-namespace:InvestmentPortfolio"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="InvestmentPortfolio.Views.PortfolioAdd"
-             >
-    
-    <Shell.BackButtonBehavior>
-        <BackButtonBehavior
-        Command="{root:NavigationCommand}"
-        CommandParameter="///main"
-        IsEnabled="True"
-        TextOverride="Back"/>
-    </Shell.BackButtonBehavior>
+             BindingContext="{Binding PortfolioAddViewModel,Source={StaticResource CompositionRoot}}"
+             xmlns:local="clr-namespace:InvestmentPortfolio"
+             xmlns:views="clr-namespace:InvestmentPortfolio.Views"
+             Title="Новый портфель">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Order="Primary"
+                     Text="Text Item"
+                     Priority="0" />
+        <ToolbarItem Order="Secondary"
+                     Text="Secondary Text Item"
+                     Priority="1"/>
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
-        <StackLayout>
-            <Entry/>
+        <StackLayout BackgroundColor="Red" Style="{StaticResource BasicContainer}">
+            <StackLayout.Resources>
+
+            </StackLayout.Resources>
+            <Entry Text="{Binding Portfolio.Name}" Placeholder="Название"></Entry>
+            <Picker SelectedItem="{Binding Portfolio.Currency}" Title="Валюта"></Picker>
+            <Editor Text="{Binding Portfolio.Comment}"
+                    VerticalOptions="End"
+                    Placeholder="Комментарий"></Editor>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
