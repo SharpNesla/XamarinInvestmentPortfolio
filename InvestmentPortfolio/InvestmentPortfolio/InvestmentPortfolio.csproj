@@ -22,6 +22,7 @@
     <PackageReference Include="Microcharts.Forms" Version="0.9.5.9" />
     <PackageReference Include="PropertyChanged.Fody" Version="3.4.0" />
     <PackageReference Include="sqlite-net-pcl" Version="1.8.116" />
+    <PackageReference Include="SQLiteNetExtensions.Async" Version="2.1.0" />
     <PackageReference Include="Xamarin.CommunityToolkit" Version="1.2.0" />
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />
     <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
@@ -32,15 +33,21 @@
     <Compile Update="Styles.xaml.cs">
       <DependentUpon>Styles.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Views\PortfolioAdd.xaml.Designer.cs">
+    <Compile Update="Views\PortfolioEditor.xaml.cs">
+      <DependentUpon>PortfolioEditor.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\PortfolioEditor.xaml.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
-      <DependentUpon>PortfolioAdd.xaml.resx</DependentUpon>
+      <DependentUpon>PortfolioEditor.xaml.resx</DependentUpon>
     </Compile>
     <Compile Update="Views\PortfolioInfo.xaml.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>PortfolioInfo.xaml.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Views\PositionEditor.xaml.cs">
+      <DependentUpon>PositionEditor.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 
@@ -54,26 +61,22 @@
     <EmbeddedResource Update="Views\Main.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\PortfolioAdd.xaml">
+    <EmbeddedResource Update="Views\PortfolioEditor.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\PortfolioInfo.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\PositionAdd.xaml">
+    <EmbeddedResource Update="Views\PositionEditor.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\PortfolioAdd.xaml.resx">
+    <EmbeddedResource Update="Views\PortfolioEditor.xaml.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>PortfolioAdd.xaml.Designer.cs</LastGenOutput>
+      <LastGenOutput>PortfolioEditor.xaml.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\PortfolioInfo.xaml.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>PortfolioInfo.xaml.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Resources\" />
   </ItemGroup>
 </Project>

@@ -6,7 +6,7 @@
     <Color x:Key="Background">#ffffff</Color>
     <Color x:Key="Foreground">#000</Color>
     <Color x:Key="Primary">#018786</Color>
-    <Color x:Key="Accent" >#FFB300</Color>
+    <Color x:Key="Accent" >Accent</Color>
     <Style TargetType="Label" x:Key="Title">
         <Setter Property="FontSize" Value="24"/>
         <Setter Property="FontAttributes" Value="Bold"/>
@@ -24,8 +24,8 @@
     </Style>
 
     <Style TargetType="Button">
-        <Setter Property="TextColor" Value="White"/>
-        <Setter Property="BackgroundColor" Value="{StaticResource Primary}"/>
+        <Setter Property="TextColor" Value="{StaticResource Primary}"/>
+        <Setter Property="BackgroundColor" Value="{StaticResource Background}"></Setter>
     </Style>
     
     <Style x:Key="FlatIconButton" TargetType="Button">
@@ -40,10 +40,13 @@
         <Setter Property="TextColor" Value="Black"/>
         <Setter Property="BackgroundColor" Value="{StaticResource Accent}"/>
     </Style>
-    <Style TargetType="Entry">
+    <!--"<Style TargetType="Entry">
+        <Setter Property="BackgroundColor" Value="Transparent"></Setter>
+    </Style>
+    <Style TargetType="Editor">
         <Setter Property="BackgroundColor" Value="Transparent"></Setter>
     </Style>
     <Style TargetType="Picker">
         <Setter Property="BackgroundColor" Value="Transparent"></Setter>
-    </Style>
+    </Style>/-->
 </ResourceDictionary>

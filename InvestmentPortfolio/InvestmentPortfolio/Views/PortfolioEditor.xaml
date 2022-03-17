@@ -8,21 +8,22 @@
              Title="Новый портфель">
     <ContentPage.ToolbarItems>
         <ToolbarItem Order="Primary"
-                     Text="Text Item"
-                     Priority="0" />
-        <ToolbarItem Order="Secondary"
-                     Text="Secondary Text Item"
-                     Priority="1"/>
+                     Text="Add"
+                     Priority="0"
+                     Command="{Binding AddCommand}"/>
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
-        <StackLayout BackgroundColor="Red" Style="{StaticResource BasicContainer}">
+        <StackLayout Style="{StaticResource BasicContainer}">
             <StackLayout.Resources>
 
             </StackLayout.Resources>
-            <Entry Text="{Binding Portfolio.Name}" Placeholder="Название"></Entry>
-            <Picker SelectedItem="{Binding Portfolio.Currency}" Title="Валюта"></Picker>
+            <Entry Text="{Binding Portfolio.Name}" Placeholder="Название*"></Entry>
+            <Picker SelectedItem="{Binding Portfolio.Currency}"
+                    ItemsSource="{Binding Currencies}"
+                    Title="Валюта*"></Picker>
             <Editor Text="{Binding Portfolio.Comment}"
                     VerticalOptions="End"
+                    AutoSize="TextChanges"
                     Placeholder="Комментарий"></Editor>
         </StackLayout>
     </ContentPage.Content>
