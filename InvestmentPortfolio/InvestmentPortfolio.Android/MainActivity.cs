@@ -10,7 +10,7 @@ namespace InvestmentPortfolio.Droid
     [Activity(Label = "Portfolio Optimizer",
         Icon = "@mipmap/icon",
         Theme = "@style/MainTheme",
-        MainLauncher = true,
+        MainLauncher = false,
         ConfigurationChanges = ConfigChanges.ScreenSize |
         ConfigChanges.Orientation |
         ConfigChanges.UiMode |
