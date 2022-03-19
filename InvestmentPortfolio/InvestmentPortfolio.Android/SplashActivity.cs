@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 [Activity(Theme = "@style/MyTheme.Splash",
     MainLauncher = true,
+    Icon = "@mipmap/icon", 
     NoHistory = true)]
 public class SplashActivity : AppCompatActivity
 {

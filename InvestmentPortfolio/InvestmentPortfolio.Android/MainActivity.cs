@@ -8,7 +8,7 @@ using Android.OS;
 namespace InvestmentPortfolio.Droid
 {
     [Activity(Label = "Portfolio Optimizer",
-        Icon = "@mipmap/icon",
+        
         Theme = "@style/MainTheme",
         MainLauncher = false,
         ConfigurationChanges = ConfigChanges.ScreenSize |
