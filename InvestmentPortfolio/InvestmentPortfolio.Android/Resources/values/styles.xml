@@ -20,19 +20,19 @@
 		<item name="android:windowLightStatusBar">true</item>
 		<item name="android:actionMenuTextColor"> #000000 </item>
 		<item name="android:elevation">4dp</item>
-
 	</style>
 
 	<style name="MyTheme.Splash" parent ="Theme.AppCompat.Light.NoActionBar">
 		<item name="android:windowBackground">@drawable/splash_screen</item>
 		<item name="android:windowNoTitle">true</item>
 		<item name="android:windowFullscreen">false</item>
+		<item name="colorPrimaryDark">#FFFFFF</item>
+		<item name="android:windowLightStatusBar">true</item>
 		<item name="android:windowContentOverlay">@null</item>
 		<item name="android:windowActionBar">true</item>
 	</style>
-	
-	<style name="MyTextViewStyle" parent="android:Widget.TextView">
-		<item name="android:textColor">#F00</item>
-		<item name="android:textStyle">bold</item>
+
+	<style name="MyButton">
+		<item name="android:background">#FF0000</item>
 	</style>
 </resources>
