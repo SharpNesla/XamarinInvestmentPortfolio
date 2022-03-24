@@ -17,7 +17,9 @@ namespace InvestmentPortfolio.Model
             // enable multi-threaded database access
             SQLite.SQLiteOpenFlags.SharedCache;
 
-        public const string YAHOO_API_CODER = "";
+        public const string YAHOO_API_CODER = "PASTE YOUR TOKEN HERE";
+        public const string YAHOO_API_ROOT = "https://yfapi.net";
+        public const string CBR_API_DAILY_URI = "https://www.cbr.ru/scripts/XML_daily.asp";
         public static string DatabasePath
         {
             get
@@ -26,5 +28,7 @@ namespace InvestmentPortfolio.Model
                 return Path.Combine(basePath, DatabaseFilename);
             }
         }
+
+        public const string FINNHUB_TOKEN = "PASTE YOUR TOKEN HERE";
     }
 }

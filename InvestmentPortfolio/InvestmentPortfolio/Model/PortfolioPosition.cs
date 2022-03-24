@@ -19,8 +19,10 @@ namespace InvestmentPortfolio.Model
         public decimal OptimizedCount { get; set; }
         [Ignore]
         public decimal Value { get; set; }
+        public decimal USDPrice { get; set; }
         [Ignore]
         public decimal OptimizedValue { get; set; }
+        public decimal OptimizedUSDValue { get; set; }
         [Ignore]
         public decimal Ratio { get; set; }
         [Ignore]

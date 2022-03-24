@@ -12,9 +12,9 @@ using Xamarin.Forms.Xaml;
 namespace InvestmentPortfolio.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class PortfolioAdd : ContentPage
+    public partial class PortfolioEditor : ContentPage
     {
-        public PortfolioAdd()
+        public PortfolioEditor()
         {
             InitializeComponent();
         }
@@ -34,12 +34,13 @@ namespace InvestmentPortfolio.Views
             this.AddCommand = new Command(this.Add);
             this.Currencies = financialService.Currencies;
             this.Portfolio = new Portfolio();
+            this.IsNew = true;
         }
 
-        public void OnNavigate(Portfolio param)
+        public async void OnNavigate(Portfolio param)
         {
             this.IsNew = false;
-            this.Portfolio = param;
+            this.Portfolio = await this.Service.GetById(param.PortfolioID);
         }
 
         private async void Add()
@@ -54,9 +55,9 @@ namespace InvestmentPortfolio.Views
                 await this.Service.Update(Portfolio);
             }
 
-
             //TODO change to navigationService
             await NavigationCommand.Back();
         }
+
     }
 }

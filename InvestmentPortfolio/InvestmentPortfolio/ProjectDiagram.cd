@@ -1,0 +1,226 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="InvestmentPortfolio.Model.Constants">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAgAAAAAAAIAAAAAAAAAAAAAgAEAAAAAQQAAAA=</HashCode>
+      <FileName>Model\Consts.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InvestmentPortfolio.Model.ValCurs">
+    <Position X="9.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\FinancialService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InvestmentPortfolio.Model.Currency">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAgAAAAAAI=</HashCode>
+      <FileName>Model\FinancialService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InvestmentPortfolio.Model.FinancialService">
+    <Position X="9.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABBAAAAAAAAAEAAAAAAAAAAAAAAAAAAAACAAAAAAg=</HashCode>
+      <FileName>Model\FinancialService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InvestmentPortfolio.Model.OptimizerService">
+    <Position X="9.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAgFAAAQAAAAAAAAAACAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\OptimizerService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InvestmentPortfolio.Model.Portfolio">
+    <Position X="12.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAAAAAgAACAABQACAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Portfolio.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InvestmentPortfolio.Model.PortfolioPosition">
+    <Position X="2.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAEAQAAAAgCAAAQAAIAAAiAAgAAgAEAAAAA=</HashCode>
+      <FileName>Model\PortfolioPosition.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InvestmentPortfolio.Model.PortfolioService">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAYAAAAAAEAAAABAEAAAAAAAAAEAAAAAAAAAAAAAAIA=</HashCode>
+      <FileName>Model\PortfolioService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InvestmentPortfolio.Model.PositionService">
+    <Position X="0.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAYAAAAAAEAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAIA=</HashCode>
+      <FileName>Model\PositionService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InvestmentPortfolio.Views.Main">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\Main.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InvestmentPortfolio.Views.MainPageViewModel" BaseTypeListCollapsed="true">
+    <Position X="12.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAYAAAAABgAAAAAAIAAAAAAAAAAEIQAAAAAAAAIIAAg=</HashCode>
+      <FileName>Views\Main.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="InvestmentPortfolio.Views.PortfolioEditor">
+    <Position X="7.5" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\PortfolioEditor.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InvestmentPortfolio.Views.PortfolioEditorViewModel" BaseTypeListCollapsed="true">
+    <Position X="11" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIBAAAAAAAAAAACAAAAAAAAAAAAQCAAAEAAAEAAAAA=</HashCode>
+      <FileName>Views\PortfolioEditor.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="InvestmentPortfolio.Views.PortfolioEditor_xaml">
+    <Position X="12.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InvestmentPortfolio.Views.RandomPastelColorGenerator">
+    <Position X="5.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAgAIAAAAAAAAAAAE=</HashCode>
+      <FileName>Views\PortfolioInfo.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InvestmentPortfolio.Views.PortfolioInfo">
+    <Position X="7.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\PortfolioInfo.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InvestmentPortfolio.Views.OptimizeByConverter" BaseTypeListCollapsed="true">
+    <Position X="7.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\PortfolioInfo.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="InvestmentPortfolio.Views.PortfolioInfoViewModel" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAJACAAgQARAIoIAASAAAAABABISCAAAABAEAICIA=</HashCode>
+      <FileName>Views\PortfolioInfo.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="InvestmentPortfolio.Views.PortfolioInfo_xaml">
+    <Position X="9.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InvestmentPortfolio.Views.PositionEditor">
+    <Position X="7.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\PositionEditor.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InvestmentPortfolio.Views.PositionEditorParams">
+    <Position X="7.5" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\PositionEditor.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InvestmentPortfolio.Views.PositionEditorViewModel" BaseTypeListCollapsed="true">
+    <Position X="11" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAiAAAAAAAAAAAAQCAAAEAAAAAAAAA=</HashCode>
+      <FileName>Views\PositionEditor.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="InvestmentPortfolio.App">
+    <Position X="4" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAAAgAEAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>App.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InvestmentPortfolio.BackCommand" BaseTypeListCollapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACAAQAAEAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BackCommand.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="InvestmentPortfolio.CompositionRoot">
+    <Position X="5.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAgAAAAAAAEAABAAAAAABAAAAAAAAAEEEAAAAA=</HashCode>
+      <FileName>CompositionRoot.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InvestmentPortfolio.MainPage">
+    <Position X="4" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MainPage.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InvestmentPortfolio.NavigationCommand" BaseTypeListCollapsed="true">
+    <Position X="11" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAACAAAAAACAAQAAEAAAAAAAAAAAgAAAAAAAAAAAAA=</HashCode>
+      <FileName>NavigationCommand.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="InvestmentPortfolio.Styles">
+    <Position X="4" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Styles.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="InvestmentPortfolio.IOnNavigate&lt;TParam&gt;">
+    <Position X="2.25" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAA=</HashCode>
+      <FileName>NavigationCommand.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="InvestmentPortfolio.IOnNavigateBack">
+    <Position X="2.25" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAA=</HashCode>
+      <FileName>NavigationCommand.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="InvestmentPortfolio.Views.OptimizeBy">
+    <Position X="0.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\PortfolioInfo.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

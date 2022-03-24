@@ -6,14 +6,15 @@
              >
     <ContentPage.ToolbarItems>
         <ToolbarItem Order="Primary"
-                     Text="Add"
                      Priority="0"
+                     IconImageSource="ok.xml"
                      Command="{Binding AddCommand}"/>
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout Style="{StaticResource BasicContainer}">
             <Entry Text="{Binding Position.Name}" Placeholder="Тикер позиции*"></Entry>
-            <Editor Text="{Binding Position.Count}" Placeholder="Количество*"></Editor>
+            <Editor Text="{Binding Position.Count}" 
+                    Keyboard="Numeric" Placeholder="Количество*"></Editor>
             <Editor Text="{Binding Position.Comment}"
                     VerticalOptions="End"
                     AutoSize="TextChanges"

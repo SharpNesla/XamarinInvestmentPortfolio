@@ -57,12 +57,11 @@ namespace InvestmentPortfolio
         public static async Task Back()
         {
             await Application.Current.MainPage.Navigation.PopAsync();
-            var page = Application.Current.MainPage.Navigation.NavigationStack.First();
-            var ctx = page.BindingContext;
-            if (ctx.GetType().GetInterfaces()
-                    .Any(i => i == typeof(IOnNavigateBack)))
+            var page = Application.Current.MainPage.Navigation.NavigationStack.Last();
+            var ctx = page.BindingContext as IOnNavigateBack;
+            if (ctx != null)
             {
-                (ctx as IOnNavigateBack).OnNavigateBack();
+                ctx.OnNavigateBack();
             }
         }
     }

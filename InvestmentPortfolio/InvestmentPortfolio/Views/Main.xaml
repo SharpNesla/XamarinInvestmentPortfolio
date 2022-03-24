@@ -16,16 +16,10 @@
             <StackLayout>
                 <Grid Margin="16" ColumnDefinitions="*, auto">
                     <Entry Placeholder="Поиск портфеля"
-                           Grid.ColumnSpan="2"/>
-                    <Button Style="{StaticResource FlatIconButton}"
-                            HorizontalOptions="Start"
-                            VerticalOptions="Center"
-                            Margin="0,0,8,0"
-                            Image="search.xml"
-                            Grid.Column="1"/>
+                           Grid.ColumnSpan="2"
+                           Text="{Binding SearchText}"/>
                 </Grid>
-                <ListView ItemsSource="{Binding Portfolios}"
-                              SelectionMode="None">
+                <ListView ItemsSource="{Binding Portfolios}">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
@@ -39,7 +33,7 @@
                                       >
 
                                     <Label Text="{Binding Name}" VerticalOptions="Center"/>
-                                    <Label Text="{Binding Cost}" VerticalOptions="Center" Grid.Column="2"/>
+                                    <Label Text="{Binding Cost, StringFormat='{0:0.00}'}" VerticalOptions="Center" Grid.Column="2"/>
                                     <Label Text="{Binding Currency}"
                                                VerticalOptions="Center" HorizontalOptions="End" Grid.Column="3"/>
                                 </Grid>
@@ -48,14 +42,17 @@
                     </ListView.ItemTemplate>
                 </ListView>
             </StackLayout>
-
-            <Button Style="{StaticResource AccentFloatingButton}"
-                 RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent,
+            <Grid
+                RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent,
         Property=Width, Factor=1, Constant=-90}"
                  RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,
-        Property=Height, Factor=1, Constant=-90}"
+        Property=Height, Factor=1, Constant=-90}">
+                <Button Style="{StaticResource AccentFloatingButton}"
+                 
                     FontSize="24"
-                Text="+" Command="{local:NavigationCommand {x:Type views:PortfolioAdd}}"/>
+                Text="+" Command="{local:NavigationCommand {x:Type views:PortfolioEditor}}"/>
+            </Grid>
+            
         </RelativeLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -10,11 +10,17 @@
             BindingContext="{Binding PortfolioInfoViewModel,Source={StaticResource CompositionRoot}}"
             BarBackgroundColor="{StaticResource Background}"
             BarTextColor="{StaticResource Foreground}"
+            
             xmlns:microcharts="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms" >
     <TabbedPage.Resources>
         <views:OptimizeByConverter x:Key="Conv"/>
-        <x:String x:Key="examplePerc">11</x:String>
     </TabbedPage.Resources>
+    <TabbedPage.ToolbarItems>
+        <ToolbarItem Order="Primary"
+                     Priority="0"
+                     IconImageSource="edit.xml"
+                     Command="{Binding EditPortfolioCommand}"/>
+    </TabbedPage.ToolbarItems>
     <TabbedPage.Children>
         <ContentPage Title="Активы">
             <RelativeLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
@@ -28,15 +34,16 @@
                             HorizontalOptions="Start"
                             VerticalOptions="Center"
                             Margin="16,0,0,0"
-                            Text="?"
-                            Grid.Column="1"/>
+                            Grid.Column="1"
+                                Text="✓"
+                            Command="{Binding OptimizeCommand}"/>
                     </Grid>
                     <ListView ItemsSource="{Binding Portfolio.Positions}"
                               SelectionMode="None">
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <ViewCell>
-                                    <Grid ColumnDefinitions="Auto, *,Auto, Auto,Auto, Auto, Auto"
+                                    <Grid ColumnDefinitions="Auto, *,Auto, 60,Auto, Auto, Auto"
                                           RowDefinitions="*,*"
                                           Margin="16,0,16,0"
                                           xct:TouchEffect.LongPressCommand=
@@ -48,57 +55,59 @@
 
                                         <Label Text="{Binding Name}"
                                             Grid.RowSpan="2" VerticalOptions="Center"/>
+                                        <StackLayout Grid.Column="2" Grid.ColumnSpan="2" Orientation="Horizontal">
+                                            <Label Text="{Binding Value, StringFormat='{}{0:0.00}'}"/>
+                                            <Label Text="{Binding BindingContext.Portfolio.Currency, Source={x:Reference PortfolioInfoView}}"/>
+                                        </StackLayout>
+                                        
 
-                                        <Label Text="{Binding OptimizedValue}" VerticalOptions="Center" Grid.Column="2"/>
-                                        <Label Text="{Binding BindingContext.Portfolio.Currency, Source={x:Reference PortfolioInfoView}}"
-                                               VerticalOptions="Center" HorizontalOptions="End" Grid.Column="3"/>
-
-                                        <Label Text="{Binding Count, StringFormat='{0} шт'}" VerticalOptions="Center"
+                                        <Label Text="{Binding Count, StringFormat='{}{0} шт'}" VerticalOptions="Center"
+                                               HorizontalOptions="End"
                                                Grid.Column="2"
                                                Grid.Row="1"/>
-                                        <Label Text="{Binding Ratio,Source='10',StringFormat='{0} %'}" VerticalOptions="Center"
+                                        <Label Text="{Binding Ratio, StringFormat='{}{0:0.00} %'}" VerticalOptions="Center"
+                                               HorizontalOptions="End"
                                                Grid.Column="3"
                                                Grid.Row="1"/>
 
                                         <Label Text="➜" VerticalOptions="Center" Grid.Column="4" Grid.RowSpan="2" Margin="4,0,4,0"/>
 
-                                        <Label Text="{Binding OptimizedValue}" VerticalOptions="Center" Grid.Column="5"/>
+                                        <Label Text="{Binding OptimizedValue, StringFormat='{}{0.00}'}" VerticalOptions="Center" Grid.Column="5"/>
                                         <Label Text="{Binding BindingContext.Portfolio.Currency, Source={x:Reference PortfolioInfoView}}"
                                                VerticalOptions="Center" HorizontalOptions="End" Grid.Column="6"/>
 
-                                        <Label Text="{Binding OptimizedCount, StringFormat='{0} шт'}" VerticalOptions="Center"
+                                        <Label Text="{Binding OptimizedCount, StringFormat='{}{0} шт'}" VerticalOptions="Center"
                                                Grid.Column="5"
                                                Grid.Row="1"/>
-                                        <Label Text="{Binding OptimizedRatio,StringFormat='{0} %'}" VerticalOptions="Center"
+                                        <Label Text="{Binding OptimizedRatio,StringFormat='{}{0.##} %'}" VerticalOptions="Center"
                                                Grid.Column="6"
                                                Grid.Row="1"/>
-
                                     </Grid>
                                 </ViewCell>
                             </DataTemplate>
                         </ListView.ItemTemplate>
                     </ListView>
                 </StackLayout>
-                <Button Style="{StaticResource AccentFloatingButton}"
-                 RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent,
+                <Grid RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent,
         Property=Width, Factor=1, Constant=-90}"
                  RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,
-        Property=Height, Factor=1, Constant=-90}"
+        Property=Height, Factor=1, Constant=-90}">
+                    <Button Style="{StaticResource AccentFloatingButton}"
+                 
                 Text="+" Command="{Binding AddPositionCommand}"
                         FontSize="24"/>
+                </Grid>
+
             </RelativeLayout>
         </ContentPage>
         <ContentPage Title="Сводка">
             <StackLayout Style="{StaticResource BasicContainer}">
                 <Label Text="Распределение активов" Style="{StaticResource Title}"/>
                 <StackLayout Orientation="Horizontal">
-                    <Switch VerticalOptions="Center"/>
+                    <Switch VerticalOptions="Center" IsToggled="{Binding IsOptimalChart}"/>
                     <Label VerticalOptions="Center" Text="Оптимально"></Label>
                 </StackLayout>
                 <microcharts:ChartView Chart="{Binding DonutChart}" HeightRequest="400"/>
-                <Label Text="Распределение" Style="{StaticResource Title}"/>
-
-                <microcharts:ChartView Chart="{Binding BarChart}"/>
             </StackLayout>
         </ContentPage>
         <ContentPage Title="Настройки">

@@ -52,7 +52,18 @@ namespace InvestmentPortfolio.Views
 
         private async void Add()
         {
-            await this.Service.Add(Position);
+            if (IsNew)
+            {
+                await this.Service.Add(Position);
+
+            }
+            else
+            {
+                await this.Service.Update(Position);
+            }
+
+            //TODO change to navigationService
+            await NavigationCommand.Back();
         }
     }
 }

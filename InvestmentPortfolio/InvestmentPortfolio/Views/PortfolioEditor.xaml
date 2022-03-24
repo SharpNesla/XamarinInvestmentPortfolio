@@ -1,26 +1,23 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="InvestmentPortfolio.Views.PortfolioAdd"
-             BindingContext="{Binding PortfolioAddViewModel,Source={StaticResource CompositionRoot}}"
+             x:Class="InvestmentPortfolio.Views.PortfolioEditor"
+             BindingContext="{Binding PortfolioEditorViewModel,Source={StaticResource CompositionRoot}}"
              xmlns:local="clr-namespace:InvestmentPortfolio"
              xmlns:views="clr-namespace:InvestmentPortfolio.Views"
              Title="Новый портфель">
     <ContentPage.ToolbarItems>
         <ToolbarItem Order="Primary"
-                     Text="Add"
                      Priority="0"
+                     IconImageSource="ok.xml"
                      Command="{Binding AddCommand}"/>
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout Style="{StaticResource BasicContainer}">
-            <StackLayout.Resources>
-
-            </StackLayout.Resources>
             <Entry Text="{Binding Portfolio.Name}" Placeholder="Название*"></Entry>
             <Picker SelectedItem="{Binding Portfolio.Currency}"
                     ItemsSource="{Binding Currencies}"
-                    Title="Валюта*"></Picker>
+                    Title="Валюта*"/>
             <Editor Text="{Binding Portfolio.Comment}"
                     VerticalOptions="End"
                     AutoSize="TextChanges"
